@@ -24,7 +24,13 @@ const PORT = process.env.PORT || 3000;
 
 
 //seedDB(); //seed the database. Commented out for now, manually seeding.
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://test-user_0:Q8Q2peTNks3XApV@cluster0-a8tlr.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true}).then(()=>{
+	console.log("Connected to MongoDB Atlas!")
+}).catch(err =>{
+	console.log("ERROR: ",err.message);
+});
+
 mongoose.set('useFindAndModify', false); //allows use of Model.findByIdAndUpdate()
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");

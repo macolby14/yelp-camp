@@ -36,7 +36,7 @@ router.post("/", middleware.isLoggedIn, (req,res)=>{
 	
 	//create a newCampground and save to db
 	var newCampground = {name:name,price:price, image:img, description: desc, author:author};
-	console.log("Logged in user is: "+req.user)
+	//console.log("Logged in user is: "+req.user)
 	Campground.create(newCampground,(err,newlyCreatedCamp) =>{
 		if(err){console.log("err");}
 		else{
