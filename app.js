@@ -19,8 +19,12 @@ const commentRoutes = 	require("./routes/comments"),
 	  campgroundRoutes = require("./routes/campgrounds"),
 	  indexRoutes	=	require("./routes/index");
 
+//environment variable back
+const DATABASEURL = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp";
+const PORT = process.env.PORT || 3000;
+
 //seedDB(); //seed the database. Commented out for now, manually seeding.
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true, useCreateIndex: true}).then(()=>{
+mongoose.connect(DATABASEURL, {useNewUrlParser: true, useCreateIndex: true}).then(()=>{
 	console.log("Connected to MongoDB Atlas!")
 }).catch(err =>{
 	console.log("ERROR: ",err.message);
@@ -58,6 +62,6 @@ app.use(indexRoutes);
 
 
 //start server port process.env.PORT=3000 for Goorm
-app.listen(process.env.PORT,()=>{
-	console.log("Server is listening on port "+process.env.PORT);
+app.listen(PORT,()=>{
+	console.log("Server is listening on port "+PORT);
 });
