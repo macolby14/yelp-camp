@@ -1,5 +1,8 @@
 # YelpCamp
 
-YelpCamp web app is a yelp clone utilizing Node.js, Express, Passport, eJS, and other packages.
+Node.js full-stack web application developed with RESTful routing, Express, EJS,  Bootstrap, mongoDB, Mongoose, Passport.js, and more technologies.
 
-Completed the Web Developer Bootcamp on Udemy. 7
+Deployed to Heroku https://morning-headland-95957.herokuapp.com/
+
+Completed as a part of Web Development Bootcamp.
+
