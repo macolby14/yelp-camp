@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 3000;
 
 //seedDB(); //seed the database. Commented out for now, manually seeding.
 mongoose.connect(DATABASEURL, {useNewUrlParser: true, useCreateIndex: true}).then(()=>{
-	console.log("Connected to MongoDB Atlas!")
+	console.log("Connected to the DB!")
 }).catch(err =>{
 	console.log("ERROR: ",err.message);
 });
