@@ -19,6 +19,9 @@ const commentRoutes = 	require("./routes/comments"),
 	  campgroundRoutes = require("./routes/campgrounds"),
 	  indexRoutes	=	require("./routes/index");
 
+//configure port for goorm (3000) or heroku (process.env.PORT)
+const PORT = process.env.PORT || 3000;
+
 
 //seedDB(); //seed the database. Commented out for now, manually seeding.
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
@@ -55,6 +58,6 @@ app.use(indexRoutes);
 
 
 //start server port 3000
-app.listen(3000,()=>{
-	console.log("Server has started");
+app.listen(PORT,()=>{
+	console.log("Server is listening on port "+PORT);
 });
